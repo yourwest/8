@@ -2,10 +2,12 @@ __author__ = 'angelinaprisyazhnaya'
 
 import re
 
+# Массив с параметрами.
 features = []
+# Пример запроса.
 example = 'мне нужна двухкомнатная квартира площ. 70 кв. м. за 2 миллиона рублей'
 
-
+# Поиск количества комнат (и числом, и буквами).
 def find_rooms_number(query):
     rooms = re.compile('(\\d|\\w+)-?\\w?х?\\s?комн', flags=re.I)
     one_room = re.compile('1|одн(а|у|ой?)', flags=re.I)
@@ -28,14 +30,14 @@ def find_rooms_number(query):
 
     return number
 
-
+# Поиск площади.
 def find_square(query):
     square = re.compile('\\bплощ(адью?)?\.?\\s(\\d+?(,|\.)?\\d+?)', flags=re.I)
     find = square.search(query)
     number = float(find.group(2).replace(',', '.'))
     return number
 
-
+# Поиск цены.
 def find_price(query):
     min_price = ''
     max_price = ''
