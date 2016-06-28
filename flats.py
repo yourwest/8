@@ -4,7 +4,7 @@ import re
 import csv
 
 features = []
-example = 'мне нужна двухкомнатная квартира площ. 60 кв. м. от 3000000 миллиона рублей'
+example = 'мне нужна двухкомнатная квартира площ. 60 кв. м. от 3000000 рублей'
 
 flats_list = open('2016-06-14 Best_2.csv', 'r', encoding='utf8', errors='ignore')
 flats_list = flats_list.read()
