@@ -38,7 +38,7 @@ def find_rooms_number(query):
 
 def find_square(query):
     min_square = 0.0
-    max_square = 0.0
+    max_square = 10000.0
     square = re.compile('\\bплощ(адью?)?\.?\\s(\\d+?(,|\.)?\\d+?)', flags=re.I)
     find = square.search(query)
     if find is not None:
